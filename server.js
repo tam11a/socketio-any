@@ -3,12 +3,7 @@ const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server, {
   cors: {
-    origin: [
-      "http://localhost:3000",
-      "https://track-geo.netlify.app",
-      "http://track-geo.netlify.app",
-      "*",
-    ],
+    origin: ["http://localhost:3000", "http://track-geo.netlify.app", "*"],
     methods: ["GET", "POST"],
   },
 });
@@ -17,7 +12,7 @@ const bodyParser = require("body-parser");
 
 app.use(
   cors({
-    origin: "*",
+    origin: ["*"],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: false,
     optionsSuccessStatus: 204,
