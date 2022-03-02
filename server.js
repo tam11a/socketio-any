@@ -3,7 +3,12 @@ const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server, {
   cors: {
-    origin: ["http://localhost:3000", "https://track-geo.netlify.app"],
+    origin: [
+      "http://localhost:3000",
+      "https://track-geo.netlify.app",
+      "http://track-geo.netlify.app",
+      "*",
+    ],
     methods: ["GET", "POST"],
   },
 });
